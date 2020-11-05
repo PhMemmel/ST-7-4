@@ -14,16 +14,16 @@ public class Main {
         binTree.insert(root, 2);
         binTree.addAll(root);
 
-//        BinTree<String> binTree = new BinTree();
-//        Node root = new Node("test");
-//        binTree.insert(root, "bla");
-//        binTree.insert(root, "blub");
-//        binTree.insert(root, "abcd");
-//        binTree.insert(root, "bcd");
-//        binTree.insert(root, "efg");
-//        binTree.insert(root, "ks");
-//        binTree.insert(root, "ls");
-//        binTree.toList(root);
+        BinTree<String> binTree2 = new BinTree();
+        Node root2 = new Node("test");
+        binTree2.insert(root2, "bla");
+        binTree2.insert(root2, "blub");
+        binTree2.insert(root2, "abcd");
+        binTree2.insert(root2, "bcd");
+        binTree2.insert(root2, "efg");
+        binTree2.insert(root2, "ks");
+        binTree2.insert(root2, "ls");
+        binTree2.toList(root2);
 
 
     }
