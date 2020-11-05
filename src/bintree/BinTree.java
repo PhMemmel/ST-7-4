@@ -15,14 +15,14 @@ public class BinTree<T extends Comparable> {
             if (node.left != null) {
                 insert(node.left, value);
             } else {
-                System.out.println(" Inserted " + value + " to left of " + node.value);
+                System.out.println(" Eingefuegt: " + value + " links von " + node.value);
                 node.left = new Node(value);
             }
         } else if (value.compareTo(node.value) > 0) {
             if (node.right != null) {
                 insert(node.right, value);
             } else {
-                System.out.println("  Inserted " + value + " to right of "
+                System.out.println("  Eingefuegt: " + value + " rechts von "
                         + node.value);
                 node.right = new Node(value);
             }
@@ -56,16 +56,16 @@ public class BinTree<T extends Comparable> {
     }
 
     public void toList(Node rootNode) {
-        Printer printer = (nodeToPrint) -> {
+        NodeTraverser nodeTraverser = (nodeToPrint) -> {
             printNodeDataRecursivelyInOrder(nodeToPrint);
         };
-        printer.print(rootNode);
+        nodeTraverser.traverse(rootNode);
     }
 
     public void addAll(Node rootNode) {
-        Printer printer = (nodeToPrint) -> {
-            System.out.println(addNodeDataRecursivelyInOrder(nodeToPrint));
+        NodeTraverser nodeTraverser = (nodeToPrint) -> {
+            System.out.println("Die Summe aller Node-Eintraege ist " + addNodeDataRecursivelyInOrder(nodeToPrint));
         };
-        printer.print(rootNode);
+        nodeTraverser.traverse(rootNode);
     }
 }
