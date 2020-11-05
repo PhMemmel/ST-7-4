@@ -1,10 +1,10 @@
 package bintree;
 
-public class Node<T extends Comparable> {
+public class Node<T extends Comparable<T>> {
 
     T value;
-    Node left;
-    Node right;
+    Node<T> left;
+    Node<T> right;
 
     public Node() {
         left = null;
