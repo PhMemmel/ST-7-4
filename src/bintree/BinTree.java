@@ -33,10 +33,13 @@ public class BinTree<T extends Comparable<T>> {
         }
     }
 
-    public int traverseWithResult(Node<T> node, NodeOperationWithResult<T> nodeOperation) {
+    public int traverseWithAddingResults(Node<T> node, NodeOperationWithResult<T> nodeOperation) {
         if (node != null) {
-            return (Integer) nodeOperation.operate(node) + traverseWithResult(node.left, nodeOperation) + traverseWithResult(node.right, nodeOperation);
-        } else return 0;
+            return (Integer) nodeOperation.operate(node) + traverseWithAddingResults(node.left, nodeOperation)
+                    + traverseWithAddingResults(node.right, nodeOperation);
+        } else {
+            return 0;
+        }
     }
 
     public void toList(Node<T> node) {
@@ -48,7 +51,7 @@ public class BinTree<T extends Comparable<T>> {
     public void addAll(Node<T> node) {
         NodeOperationWithResult<T> nodeOperationWithResult;
         nodeOperationWithResult = (nodeToCall) -> nodeToCall.value;
-        System.out.println(traverseWithResult(node, nodeOperationWithResult));
+        System.out.println(traverseWithAddingResults(node, nodeOperationWithResult));
 
     }
 }
